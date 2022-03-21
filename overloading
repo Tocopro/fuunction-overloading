@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+class Overload
+{
+private:
+    int m1;
+    int m2;
+public:
+    Overload(int num1, int num2)
+    {
+        int res;
+        m1 = num1;
+        m2 = num2;
+        res = m2 - m1;
+        cout << "Res is = " << res << endl;
+
+    }
+    void operator-()
+    {
+        m1 = -m1;
+        m2 = -m2;
+
+    }
+    void display()
+    {
+        cout << "m1 = " << m1 << ", m2 = " << m2 << endl;
+    }
+
+};
+
+int main()
+{
+    Overload op9(10, 2);
+    -op9;
+    op9.display();
+    op9.operator-();
+
+    return 0;
+}
